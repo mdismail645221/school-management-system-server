@@ -42,6 +42,14 @@ async function run(){
             res.send(result)
         })
 
+        app.post("/students", async(req, res)=>{
+            const body = req.body;
+            // console.log(body)
+            const result = await studentCollection.insertOne(body);
+            console.log(result)
+            res.send(result);
+        })
+
 
     }
     catch{(e)=>{
